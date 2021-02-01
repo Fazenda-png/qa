@@ -13,7 +13,11 @@ module Pages
         input_email.gset email
         input_senha.gset senha
 
-        btn_login.gclick
+        (0..2).each do
+          if has_btn_entrar?
+            btn_entrar.gclick
+          end
+        end
       end
 
     end
