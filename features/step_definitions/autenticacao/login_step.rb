@@ -1,6 +1,7 @@
 Dado('que esteja na Home') do
   @home = $ec_pages.home
   @login = $ec_pages.login
+  @cadastro = $ec_pages.cadastro
   @home.load
 end
 
