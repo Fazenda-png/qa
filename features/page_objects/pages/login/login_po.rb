@@ -7,7 +7,7 @@ module Pages
 
       element :input_email, '#login'
       element :input_senha, '#senha'
-      element :btn_login, '#entrar'
+      element :btn_entrar, '#entrar'
 
       def logar(email, senha)
         input_email.gset email
