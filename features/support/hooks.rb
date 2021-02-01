@@ -71,9 +71,8 @@ end
 # end
 
 Before do
-  @loginPage = Autenticacao::Login.new
-  @cadastroPage = Autenticacao::Cadastro.new
-  @oportunidadesPage = Oportunidades::Cadastro.new
+  # @loginPage = Login::Login.new
+  # @cadastroPage = Autenticacao::Cadastro.new
 end
 
 AfterStep do |result, step|
