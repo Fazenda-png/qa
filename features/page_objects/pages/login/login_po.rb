@@ -8,6 +8,7 @@ module Pages
       element :input_email, '#login'
       element :input_senha, '#senha'
       element :btn_entrar, '#entrar'
+      element :form, '#form_login'
 
       def logar
         aut = Factory.user
@@ -20,6 +21,12 @@ module Pages
             btn_entrar.gclick
           end
         end
+      end
+
+      def logar_erro(email, senha)
+        input_email.gset email
+        input_senha.gset senha
+        btn_entrar.gclick
       end
 
     end
