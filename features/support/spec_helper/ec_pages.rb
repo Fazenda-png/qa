@@ -11,11 +11,9 @@ Dir[File.join(File.dirname(__FILE__), 'page_objects/pages/*.rb')]
         def login
           Pages::Login::Login.new
         end
-
         def oportunidades
           Pages::Oportunidades::Oportunidades.new
         end
-
         def cadastro
           Pages::Cadastro::Cadastro.new
         end

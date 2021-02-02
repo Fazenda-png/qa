@@ -11,6 +11,7 @@ module Pages
       #section :barra, Sections::Headers::BarLateral, ".menu_lateral"
 
       element :btn_clientes, '[href="/cliente"]'
+      element :btn_oportunidades, '[href="/oportunidade"]'
 
       element :popup, '#onesignal-slidedown-cancel-button'
       element :btn_logoHome, 'a[class=logo]'
@@ -23,6 +24,9 @@ module Pages
         main_header.login
       end
 
+      def abrir_oportunidades
+        btn_oportunidades.gclick
+      end
     end
   end
 end

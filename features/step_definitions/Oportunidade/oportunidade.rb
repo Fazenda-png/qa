@@ -1,19 +1,25 @@
 Dado("que esteja logado") do
-
+  step 'que esteja na Home'
+  step 'acessar Login'
+  step 'realizar login com usuário válido'
+  @Oportunidade = $ec_pages.oportunidades
 end
-  
+
 Dado("esteja na pagina de oportunidades") do
-
+  @home.abrir_oportunidades.gclick
+  binding.pry
+  @btnOp = @Oportunidade.listagem
+  @btnOp.btn_cadastro.click
 end
-  
+
 Quando("preencher os campos") do
-  pending # Write code here that turns the phrase above into concrete actions
+
 end
 
 Quando("preencher os campos de contato") do
-  pending # Write code here that turns the phrase above into concrete actions
+
 end
-  
-  Então("deverá aparecer {string}") do |string|
+
+Então("deverá aparecer {string}") do |string|
 
 end
