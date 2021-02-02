@@ -14,12 +14,3 @@ Funcionalidade: Cadastro Cliente
     Esquema do Cenário:
       Quando preencher os campos com
       Entao deverá aparecer a mensagem de erro
-
-
-
-
-
-
-
-
-

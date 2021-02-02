@@ -66,13 +66,13 @@ Before do
   @home.load
 end
 
-Before do
-  @usuario = {email: 'automationdesafio@mailsac.com', senha: 'automation123'}
-end
+# Before do
+#   @usuario = {email: 'automationdesafio@mailsac.com', senha: 'automation123'}
+# end
 
 Before do
-  @loginPage = Autenticacao::Login.new
-  @cadastroPage = Autenticacao::Cadastro.new
+  # @loginPage = Login::Login.new
+  # @cadastroPage = Autenticacao::Cadastro.new
 end
 
 AfterStep do |result, step|
