@@ -60,7 +60,7 @@ module Sections
       end
 
       def cadastraOportunidade
-
+        
       end
 
     end
