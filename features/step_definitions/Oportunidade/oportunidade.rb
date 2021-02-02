@@ -3,13 +3,13 @@ Dado("que esteja logado") do
   step 'acessar Login'
   step 'realizar login com usuário válido'
   @Oportunidade = $ec_pages.oportunidades
+  @home.abrir_oportunidades.gclick
 end
 
 Dado("esteja na pagina de oportunidades") do
-  @home.abrir_oportunidades.gclick
   binding.pry
   @btnOp = @Oportunidade.listagem
-  @btnOp.btn_cadastro.click
+  @btnOp.btn_cadastro.gclick
 end
 
 Quando("preencher os campos") do
