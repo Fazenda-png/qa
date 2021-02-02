@@ -8,6 +8,6 @@ Funcionalidade: Cadastro de oportunidade
         E esteja na pagina de oportunidades
     
     Cenário: Cadastro
-        Quando preencher os campos "Nome", "Tipo", "CPF", "Celular", "Email", "Telefone", "Area de Atuação", "Origem", "Cidade", "UF", "Tag", "Responsavel", "Equipe", "Valor", "Titulo", "Etapa"
-        E preencher os campos de contato "Nome", "Cargo", "Email", "Telefone", "Celular"
+        Quando preencher os campos
+        E preencher os campos de contato
         Então deverá aparecer "Registro cadastrado com sucesso."

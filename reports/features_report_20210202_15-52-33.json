@@ -1,0 +1,217 @@
+[
+  {
+    "uri": "features/specs/Oportunidades/oportunidade.feature",
+    "id": "cadastro-de-oportunidade",
+    "keyword": "Funcionalidade",
+    "name": "Cadastro de oportunidade",
+    "description": "",
+    "line": 4,
+    "tags": [
+      {
+        "name": "@Oportunidade",
+        "line": 3
+      }
+    ],
+    "elements": [
+      {
+        "keyword": "Contexto",
+        "name": "Logado",
+        "description": "",
+        "line": 6,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-3.34.0/lib/capybara/cucumber.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45500
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.34.0/lib/capybara/cucumber.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46500
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31894393700
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 50800
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:73"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "uninitialized constant Autenticacao (NameError)\n./features/support/hooks.rb:74:in `Before'",
+              "duration": 256800
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "que esteja logado",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/Oportunidade/oportunidade.rb:1"
+            },
+            "result": {
+              "status": "skipped"
+            },
+            "after": [
+              {
+                "match": {
+                  "location": "features/support/hooks.rb:78"
+                },
+                "result": {
+                  "status": "skipped"
+                }
+              }
+            ]
+          },
+          {
+            "keyword": "E ",
+            "name": "esteja na pagina de oportunidades",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/Oportunidade/oportunidade.rb:5"
+            },
+            "result": {
+              "status": "skipped"
+            },
+            "after": [
+              {
+                "match": {
+                  "location": "features/support/hooks.rb:78"
+                },
+                "result": {
+                  "status": "skipped"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cadastro-de-oportunidade;cadastro",
+        "keyword": "Cenário",
+        "name": "Cadastro",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Oportunidade",
+            "line": 3
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "preencher os campos",
+            "line": 11,
+            "match": {
+              "location": "features/specs/Oportunidades/oportunidade.feature:11"
+            },
+            "result": {
+              "status": "undefined"
+            },
+            "after": [
+              {
+                "match": {
+                  "location": "features/support/hooks.rb:78"
+                },
+                "result": {
+                  "status": "skipped"
+                }
+              }
+            ]
+          },
+          {
+            "keyword": "E ",
+            "name": "preencher os campos de contato",
+            "line": 12,
+            "match": {
+              "location": "features/specs/Oportunidades/oportunidade.feature:12"
+            },
+            "result": {
+              "status": "undefined"
+            },
+            "after": [
+              {
+                "match": {
+                  "location": "features/support/hooks.rb:78"
+                },
+                "result": {
+                  "status": "skipped"
+                }
+              }
+            ]
+          },
+          {
+            "keyword": "Então ",
+            "name": "deverá aparecer \"Registro cadastrado com sucesso.\"",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/Oportunidade/oportunidade.rb:17"
+            },
+            "result": {
+              "status": "skipped"
+            },
+            "after": [
+              {
+                "match": {
+                  "location": "features/support/hooks.rb:78"
+                },
+                "result": {
+                  "status": "skipped"
+                }
+              }
+            ]
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:87"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "undefined method `attach' for #<Object:0x0000000005f62f20>\nDid you mean?  attach_file (NoMethodError)\n./features/support/hooks.rb:58:in `take_screenshot'\n./features/support/hooks.rb:89:in `After'",
+              "duration": 836474500
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.34.0/lib/capybara/cucumber.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2351666600
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
