@@ -23,7 +23,8 @@ class Factory
       cep: '99010051',
       logradouro: 'Rua Coronel Chicuta',
       numero: '575',
-      bairro: 'Centro'
+      bairro: 'Centro',
+      pais: Faker::Address.country
     }
   end
 
