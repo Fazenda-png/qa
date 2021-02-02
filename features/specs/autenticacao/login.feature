@@ -8,5 +8,5 @@ Funcionalidade: Login
 
     @loginCadastrado
     Cenário: Usuário Cadastrado
-      Quando realizar login com "automationdesafio@mailsac.com" e "automation123"
+      Quando realizar login com usuário válido
       Então deverá aparecer o header de usuário

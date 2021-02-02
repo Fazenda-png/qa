@@ -4,7 +4,7 @@ Dado('que esteja credenciado')do
   @cadastro = $ec_pages.cadastro
   @home.load
   @home.abrir_login
-  @login.logar('gabrielvalendorf@gmail.com', '123456')
+  @login.logar
 end
 
 Dado('que esteja em clientes') do

@@ -9,8 +9,8 @@ Quando('acessar Login') do
   @home.abrir_login
 end
 
-Quando('realizar login com {string} e {string}') do |login, senha|
-  @login.logar(login, senha)
+Quando('realizar login com usuário válido') do
+  @login.logar
 end
 
 Então('deverá aparecer o header de usuário') do
