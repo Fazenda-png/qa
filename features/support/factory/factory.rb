@@ -5,11 +5,12 @@ class Factory
   def self.user
     {
       cpf: Faker::CPF.pretty,
+      cnpj: Faker::CNPJ.pretty,
       apelido: Faker::Space.planet,
       nome: "Test Automation #{Faker::Name.first_name}",
       sobrenome: Faker::Name.last_name,
-      senha: "SENHA" + "123456",
-
+      aut_senha: "automation123",
+      aut_email: "automationdesafio@mailsac.com",
       email: "teste.#{Faker::Name.first_name}.#{rand(99)}@mailsac.com",
       celular: "5499999#{rand(9999)}",
       telefone: "543380#{rand(9999)}",
