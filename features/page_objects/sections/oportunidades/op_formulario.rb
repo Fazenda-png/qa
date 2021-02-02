@@ -30,36 +30,37 @@ module Sections
       element :btn_salvar, '#btn_salvar_oportunidade'
 
       def geraOportunidade
-        user = Factory.user
-        user[:cpf]
-        user[:cnpj]
-        {
-          nome: user[:nome],
-          tipo_pessoa:
-          cpf_cnpj: documento
-          celular: user[:celular],
-          email: user[:email],
-          telefone: user[:telefone],
-          area:
-          origem:
-          cidade:
-          uf:
-          status:
-          responsavel:
-          equipe:
-          valor:
-          descricao:
-          etapa:
+        # user = Factory.user
+        # user[:cpf]
+        # user[:cnpj]
+        # {
+        #   nome: user[:nome],
+        #   tipo_pessoa:
+        #   cpf_cnpj: documento
+        #   celular: user[:celular],
+        #   email: user[:email],
+        #   telefone: user[:telefone],
+        #   area:
+        #   origem:
+        #   cidade:
+        #   uf:
+        #   status:
+        #   responsavel:
+        #   equipe:
+        #   valor:
+        #   descricao:
+        #   etapa:
 
-          contato_nome: user[:nome] + ' contato',
-          contato_cargo: user[:apelido],
-          contato_email: user[:email],
-          contato_telefone: user[:telefone],
-          contato_celular: user[:celular],
-        }
+        #   contato_nome: user[:nome] + ' contato',
+        #   contato_cargo: user[:apelido],
+        #   contato_email: user[:email],
+        #   contato_telefone: user[:telefone],
+        #   contato_celular: user[:celular],
+        # }
       end
 
       def cadastraOportunidade
+        
 
       end
 
