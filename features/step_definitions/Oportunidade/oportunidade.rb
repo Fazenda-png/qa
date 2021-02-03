@@ -22,7 +22,7 @@ end
 
 Quando('preencher os campos {​​string}​​, {​​string}​​, {​​string}​​, {​​string}​​, {​​string}, {​​string}​​, {​​string}​​') do |Nome, Tipo, CPF, CNPJ, Email, Nome, Email|
   @form_erro = @Oportunidade.formulario
-  @form_erro.cadastro_error(Nome, Tipo, CPF, CNPJ, Email, Nome, Email)
+  @form_erro.cadastro_error(nome, tipo, cpf, cnpj, email, nome, email)
 end
 
 Então('deverá aparecer {​​string}​​{​​string}​​') do |mensagem, local|
