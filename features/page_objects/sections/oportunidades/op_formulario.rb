@@ -113,6 +113,30 @@ module Sections
         rd_contato_principal[0].click
         btn_salvar.gclick
 
+        element :error_name, "#razao_cliente_error"
+        element :error_email, "#email_cliente_error"
+        element :error_cpf, "#cpf-error"
+        element :error_cnpj, "#cnpj-error"
+        element :error_name_con, ".toast-message"
+
+        def error_cad(local)
+          case local
+          when input_name_op
+            error_name.text
+          when input_email_op
+            error_email.text
+          when input_email_con
+            error_email.text
+          when input_cpF 
+            error_cpf.text
+          when input_cnpj
+            error_cnpj.text
+          when input_name_con
+            error_name_con.text
+          end
+        end
+
+
         time = Time.new
         file = File.open('reports/oportunidades/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".txt", 'w') do |fline|
           fline.puts (oportunidade.to_json)
