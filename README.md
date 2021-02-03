@@ -36,13 +36,13 @@ bundle install
 É possível testar as funcionalidades da seguinte forma:
 
 - Login
-'''sh
+```sh
 cucumber -t @login
-'''
+```
 - Cadastro de cliente
-'''sh
+```sh
 cucumber -t @cadastro
-'''
+```s
 
 ### Dependências do template
 - cucumber
