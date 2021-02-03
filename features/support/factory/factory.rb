@@ -5,7 +5,6 @@ class Factory
   def self.user
     {
       cpf: Faker::CPF.pretty,
-      cnpj: Faker::CNPJ.pretty,
       apelido: Faker::Space.planet,
       nome: "Test Automation #{Faker::Name.first_name}",
       sobrenome: Faker::Name.last_name,
@@ -35,5 +34,9 @@ class Factory
       validade: '1228',
       cvv: '258'
     }
+  end
+
+  def self.CNPJ
+    ['51917449000150', '78547116000132', '15551257000109', '08658283000175', '98136007000130', '19483742000143', '36866460000144']
   end
 end

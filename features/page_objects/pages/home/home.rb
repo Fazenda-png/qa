@@ -16,6 +16,8 @@ module Pages
       element :popup, '#onesignal-slidedown-cancel-button'
       element :btn_logoHome, 'a[class=logo]'
 
+      element :message_op, '.toast-message'
+
       def abrir_cliente
         btn_clientes.gclick
       end
