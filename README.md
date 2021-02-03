@@ -42,7 +42,7 @@ cucumber -t @login
 - Cadastro de cliente
 ```sh
 cucumber -t @cadastro
-```s
+```
 
 ### Dependências do template
 - cucumber
