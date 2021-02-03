@@ -1,3 +1,5 @@
+require 'httparty'
+
 module Sections
   module Oportunidades
     class Formulario < SitePrism::Section
@@ -116,9 +118,9 @@ module Sections
           fline.puts (oportunidade.to_json)
         end
 
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/oportunidade',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => oportunidade.to_json)
 
       end
-
     end
   end
 end
