@@ -27,5 +27,6 @@ end
 
 Então('deverá aparecer {​​string}​​{​​string}​​') do |mensagem, local|
   @form_alert = @Oportunidade.formulario
-  expect(@form_alert(local).text).to eql mensagem
+
+  expect(@form_alert.error_cad(local).text).to eql mensagem
 end
