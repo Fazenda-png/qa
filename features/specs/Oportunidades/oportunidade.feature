@@ -12,8 +12,7 @@ Funcionalidade: Cadastro de oportunidade
         Então deverá aparecer "Registro cadastrado com sucesso."
     @Oportunidade
     Esquema do Cenário: Cadastro erro
-        Quando preencher os campos "<Nome>", "<Tipo>", "<CPF>", "<CNPJ>", "<Email>"
-        E preencher os campos do contato "<Nome>", "<Email>"
+        Quando preencher os campos "<Nome>", "<Tipo>", "<CPF>", "<CNPJ>", "<Email>", "<Nome>", "<Email>"
         Então deverá aparecer "mensagem""local"
 
         Exemplos:

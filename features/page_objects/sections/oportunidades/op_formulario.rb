@@ -27,7 +27,8 @@ module Sections
       elements :opt_etapa, '#id_etapa > option'
 
       element :edt_contato_nome, '#nome_contato'
-      element :edt_contato_email, '#cargo_contato'
+      element :edt_contato_cargo, '#cargo_contato'
+      element :edt_contato_email, '#email_contato'
       element :edt_contato_fone, '#fone_contato'
       element :edt_contato_cel, '#celular_contato'
       element :btn_novo_contato, '#btn-inserir-novo-contato'
@@ -142,6 +143,19 @@ module Sections
         when input_name_con
           error_name_con.text
         end
+      end
+
+      def cadastro_error(Nome, Tipo, CPF, CNPJ, Email, Nome, Email)
+        edt_nome.set Nome
+        cbx_tp_pessoa.select(Tipo)
+        if cbx_tp_pessoa == 'Pessoa Física'
+          edt_cpf.set CPF
+        else 
+          edt_cnpj.set CNPJ
+        end
+        edt_email.set Email
+        edt_contato_nome.set Nome
+        edt_contato_email.set Email
       end
     end
   end
