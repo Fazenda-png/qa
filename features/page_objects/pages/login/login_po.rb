@@ -10,6 +10,7 @@ module Pages
       element :btn_entrar, '#entrar'
       element :form, '#form_login'
 
+
       def logar
         aut = Factory.user
 
