@@ -119,31 +119,29 @@ module Sections
         element :error_cnpj, "#cnpj-error"
         element :error_name_con, ".toast-message"
 
-        def error_cad(local)
-          case local
-          when input_name_op
-            error_name.text
-          when input_email_op
-            error_email.text
-          when input_email_con
-            error_email.text
-          when input_cpF 
-            error_cpf.text
-          when input_cnpj
-            error_cnpj.text
-          when input_name_con
-            error_name_con.text
-          end
-        end
-
-
         time = Time.new
         file = File.open('reports/oportunidades/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".txt", 'w') do |fline|
           fline.puts (oportunidade.to_json)
         end
 
         post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/oportunidade',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => oportunidade.to_json)
+      end
 
+      def error_cad(local)
+        case local
+        when input_name_op
+          error_name.text
+        when input_email_op
+          error_email.text
+        when input_email_con
+          error_email.text
+        when input_cpF
+          error_cpf.text
+        when input_cnpj
+          error_cnpj.text
+        when input_name_con
+          error_name_con.text
+        end
       end
     end
   end

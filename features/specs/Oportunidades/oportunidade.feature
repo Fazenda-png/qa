@@ -1,22 +1,22 @@
 #language:pt
 
-@Oportunidade
+
 Funcionalidade: Cadastro de oportunidade
 
     Contexto: Logado
         Dado que esteja logado
         E esteja na pagina de oportunidades
-    
+
     Cenário: Cadastro
         Quando preencher os campos
         Então deverá aparecer "Registro cadastrado com sucesso."
-
+    @Oportunidade
     Esquema do Cenário: Cadastro erro
         Quando preencher os campos "<Nome>", "<Tipo>", "<CPF>", "<CNPJ>", "<Email>"
         E preencher os campos do contato "<Nome>", "<Email>"
         Então deverá aparecer "mensagem""local"
 
-        Exemplos: 
+        Exemplos:
 
         | Nome    | Tipo            | CPF          | CNPJ         | Email               | Nome        | Email               | mensagem                                                     | Local           |
         |         | Pessoa Física   | 042839560    |              | Pule1927@rhyta.com  | TESTE33     | Pule1927@dayrep.com | O campo Razão Social é obrigatorio.                          | input_name_op   |

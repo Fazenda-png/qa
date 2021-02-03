@@ -19,3 +19,15 @@ end
 Então("deverá aparecer {string}") do |mensagem|
   expect(@home.message_op.text).to eql mensagem
 end
+
+Quando('preencher os campos {​​string}​​, {​​string}​​, {​​string}​​, {​​string}​​, {​​string}​​') do |string, string2, string3, string4, string5|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Quando('preencher os campos do contato {​​string}​​, {​​string}​​') do |string, string2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Então('deverá aparecer {​​string}​​{​​string}​​') do |string, string2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
