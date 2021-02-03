@@ -5,23 +5,25 @@ module Pages
     class Cadastro < SitePrism::Page
       set_url = '/cliente'
 
-      section :cliente, Sections::Cadastro::Cliente, '#gerais'
+      section :cliente, Sections::Cadastro::Cliente, '.add_novo'
 
       element :btn_cadastrar, '#cadastrar'
-      element :btn_salvar, '#btn_adicionar'
       element :mensagem, '.nova_lista'
       element :mensagemErro, '.mdb-skin-custom'
 
       def cadastrar
-        btn_cadastrar.click
-        cliente.cadastro
-        btn_salvar.click
+        cont = 0
+        3.times do
+          btn_cadastrar.gclick
+          cliente.cadastro(cont)
+          cont +=1
+        end
       end
 
       def cadastrar_erro(nomeSet, emailSet, cpfSet)
-        btn_cadastrar.click
+        btn_cadastrar.gclick
         cliente.cadastro_erro(nomeSet, emailSet, cpfSet)
-        btn_salvar.click
+        btn_salvar.gclick
       end
     end
   end

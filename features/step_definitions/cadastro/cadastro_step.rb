@@ -21,7 +21,7 @@ Quando('preencher o formulário com {string}, {string}, {string}') do |nome, ema
 end
 
 Então('deverá aparecer a mensagem') do
-  mensagem = 'Test Automation'
+  mensagem = 'outro@mailsac.com'
   expect(@cadastro.mensagem).to have_content mensagem
 end
 

@@ -12,7 +12,7 @@ module Pages
 
       def logar
         aut = Factory.user
-
+        
         input_email.gset aut[:aut_email]
         input_senha.gset aut[:aut_senha]
 
