@@ -9,5 +9,4 @@ Funcionalidade: Cadastro de oportunidade
     
     Cenário: Cadastro
         Quando preencher os campos
-        E preencher os campos de contato
         Então deverá aparecer "Registro cadastrado com sucesso."

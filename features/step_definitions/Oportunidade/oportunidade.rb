@@ -16,10 +16,6 @@ Quando("preencher os campos") do
   @form.cadastraOportunidade
 end
 
-Quando("preencher os campos de contato") do
-
-end
-
 Então("deverá aparecer {string}") do |mensagem|
   expect(@home.message_op.text).to eql mensagem
 end
