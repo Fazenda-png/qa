@@ -17,7 +17,8 @@ O objetivo do projeto é focado em fixar atividades e práticas referentes à á
 
 Para rodar o projeto é necessário realizar alguns downloads em sua máquina
 
-- [Ruby](https://rubyinstaller.org/downloads/) - [Cmder, caso use windows](https://cmder.net/)
+- [Ruby](https://rubyinstaller.org/downloads/) 
+- [Cmder, caso use windows](https://cmder.net/)
 
 > Após instalar o ruby (e o cmder) será necessário rodar alguns comandos em seu terminal
 ```sh
