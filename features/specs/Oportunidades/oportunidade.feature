@@ -17,7 +17,7 @@ Funcionalidade: Cadastro de oportunidade
 
         Exemplos:
 
-        | Nome    | Tipo            | CPF          | CNPJ         | Email               | Nome        | Email               | mensagem                                                     | Local           |
+        | Nome    | Tipo            | CPF          | CNPJ         | Email               | Nome_cont   | Email_cont          | mensagem                                                     | Local           |
         |         | Pessoa Física   | 042839560    |              | Pule1927@rhyta.com  | TESTE33     | Pule1927@dayrep.com | O campo Razão Social é obrigatorio.                          | input_name_op   |
         | TESTE32 | Pessoa Física   |              |              | Pule1927@rhyta.com  | TESTE33     | Pule1927@dayrep.com | Informe um CPF válido.                                       | input_cpf       |
         | TESTE32 | Pessoa Física   | 042839560    |              |                     | TESTE33     | Pule1927@dayrep.com | Please enter a valid email address.                          | input_email_op  |

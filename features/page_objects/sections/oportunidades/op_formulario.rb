@@ -145,7 +145,7 @@ module Sections
         end
       end
 
-      def cadastro_error(nome, tipo, cpf, cnpj, email, nome, email)
+      def cadastro_error(nome, tipo, cpf, cnpj, email, nome_cont, email_cont)
         edt_nome.set nome
         cbx_tp_pessoa.select(tipo)
         if cbx_tp_pessoa == 'Pessoa Física'
@@ -154,8 +154,8 @@ module Sections
           edt_cnpj.set cnpj
         end
         edt_email.set email
-        edt_contato_nome.set nome
-        edt_contato_email.set email
+        edt_contato_nome.set nome_cont
+        edt_contato_email.set email_cont
       end
     end
   end
