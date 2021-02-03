@@ -35,27 +35,27 @@ module Sections
         user[:cnpj]
         {
           nome: user[:nome],
-          tipo_pessoa:
-          cpf_cnpj: documento
+          tipo_pessoa: 'a',
+          cpf_cnpj: documento,
           celular: user[:celular],
           email: user[:email],
           telefone: user[:telefone],
-          area:
-          origem:
-          cidade:
-          uf:
-          status:
-          responsavel:
-          equipe:
-          valor:
-          descricao:
-          etapa:
+          area: 'a' ,
+          origem: 'a',
+          cidade: 'a',
+          uf: 'a',
+          status:'a' ,
+          responsavel:'a' ,
+          equipe: 'a',
+          valor: 'a',
+          descricao:'a' ,
+          etapa: 'a',
 
           contato_nome: user[:nome] + ' contato',
           contato_cargo: user[:apelido],
           contato_email: user[:email],
           contato_telefone: user[:telefone],
-          contato_celular: user[:celular],
+          contato_celular: user[:celular]
         }
       end
 
