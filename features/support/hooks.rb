@@ -61,6 +61,20 @@ def take_screenshot(file_name = '', status = :passed)
   $screenshot_counter += 1
 end
 
+Before do
+  @home = $ec_pages.home
+  @home.load
+end
+
+# Before do
+#   @usuario = {email: 'automationdesafio@mailsac.com', senha: 'automation123'}
+# end
+
+Before do
+  # @loginPage = Login::Login.new
+  # @cadastroPage = Autenticacao::Cadastro.new
+end
+
 AfterStep do |result, step|
   begin
     status_name = status_from_result result
@@ -116,5 +130,3 @@ end
     #end
   #end
 #end
-
-
