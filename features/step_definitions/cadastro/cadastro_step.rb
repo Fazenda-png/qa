@@ -1,3 +1,4 @@
+
 Dado('que esteja credenciado')do
   @home = $ec_pages.home
   @login = $ec_pages.login
@@ -19,11 +20,11 @@ Quando('preencher o formulário com {string}, {string}, {string}') do |nome, ema
   @cadastro.cadastrar_erro(nome,email,cpf)
 end
 
-Então('deverá aparecer a {string}') do |mensagemErro|
-  expect(@cadastro.mensagemErro).to have_content mensagemErro
+Então('deverá aparecer a mensagem') do
+  mensagem = 'outro@mailsac.com'
+  expect(@cadastro.mensagem).to have_content mensagem
 end
 
-Então('deverá aparecer a mensagem') do
-  mensagem = 'Test Automation'
-  expect(@cadastro.mensagem).to have_content mensagem
+Então('deverá aparecer a {string}') do |mensagemErro|
+  expect(@cadastro.mensagemErro).to have_content mensagemErro
 end

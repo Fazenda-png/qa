@@ -5,6 +5,7 @@ class Factory
   def self.user
     {
       cpf: Faker::CPF.pretty,
+      cnpj: Faker::CNPJ.pretty,
       apelido: Faker::Space.planet,
       nome: "Test Automation #{Faker::Name.first_name}",
       sobrenome: Faker::Name.last_name,
@@ -23,7 +24,8 @@ class Factory
       cep: '99010051',
       logradouro: 'Rua Coronel Chicuta',
       numero: '575',
-      bairro: 'Centro'
+      bairro: 'Centro',
+      pais: Faker::Address.country
     }
   end
 

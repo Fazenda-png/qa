@@ -6,12 +6,14 @@ module Sections
       element :edt_nome, '#razao_cliente'
       element :cbx_tp_pessoa, '#tipo_pessoa'
       elements :opt_tp_pessoa, '#tipo_pessoa > option'
+      
       element :edt_cpf, '#cpf'
       element :edt_cnpj, '#cnpj'
       element :edt_celular, '#celular_cliente'
       element :edt_email, '#email_cliente'
       element :edt_telefone, '#fone_cliente'
       element :cbx_area_atu, '#id_atuacao'
+
       elements :opt_area_atu, '#id_atuacao > option'
       element :cbx_origem, '#id_origem'
       elements :opt_origem, '#id_origem > option'
@@ -19,16 +21,19 @@ module Sections
       element :cbx_uf, '#uf'
       elements :opt_uf, '#uf > option'
       element :cbx_status, '#id_status_cad'
+
       element :cbx_responsavel, '#id_usuario'
       element :cbx_equipe, '#id_equipe'
       element :edt_valor, '#valor'
       element :edt_descricao, '#descricao'
       element :cbx_etapa, '#id_etapa'
+
       elements :opt_etapa, '#id_etapa > option'
 
       element :edt_contato_nome, '#nome_contato'
       element :edt_contato_cargo, '#cargo_contato'
       element :edt_contato_email, '#email_contato'
+
       element :edt_contato_fone, '#fone_contato'
       element :edt_contato_cel, '#celular_contato'
       element :btn_novo_contato, '#btn-inserir-novo-contato'
