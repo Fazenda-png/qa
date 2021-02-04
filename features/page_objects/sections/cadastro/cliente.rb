@@ -57,9 +57,10 @@ module Sections
       end
 
       def cadastro_erro(nomeSet, emailSet, cpfSet)
-        nome.set nomeSet
-        email.set emailSet
-        cpf.set cpfSet
+        nome.gset nomeSet
+        email.gset emailSet
+        cpf.gset cpfSet
+        btn_salvar.gclick
       end
 
     end

@@ -11,7 +11,7 @@ Funcionalidade: Cadastrar Cliente
       Quando preencher o formulário
       Então deverá aparecer a mensagem
 
-    @erro
+    @cadastroErro
     Esquema do Cenário: Cadastro Cliente Excption
       Quando preencher o formulário com "<nome>", "<email>", "<cpf>"
       Então deverá aparecer a "<mensagem>"

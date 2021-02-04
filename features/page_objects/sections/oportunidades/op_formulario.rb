@@ -6,7 +6,7 @@ module Sections
       element :edt_nome, '#razao_cliente'
       element :cbx_tp_pessoa, '#tipo_pessoa'
       elements :opt_tp_pessoa, '#tipo_pessoa > option'
-      
+
       element :edt_cpf, '#cpf'
       element :edt_cnpj, '#cnpj'
       element :edt_celular, '#celular_cliente'
@@ -77,7 +77,7 @@ module Sections
           uf: uf,
           status: 'ATIVO',
           responsavel: cbx_responsavel.text,
-          equipe: cbx_equipe.text,
+          equipe: "",
           valor: rand(1..100),
           descricao: user[:nascimento],
           etapa: etapa,

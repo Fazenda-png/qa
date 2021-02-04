@@ -23,7 +23,6 @@ module Pages
       def cadastrar_erro(nomeSet, emailSet, cpfSet)
         btn_cadastrar.gclick
         cliente.cadastro_erro(nomeSet, emailSet, cpfSet)
-        btn_salvar.gclick
       end
     end
   end
