@@ -116,7 +116,6 @@ module Sections
         edt_descricao.gset oportunidade[:descricao]
         # cbx_etapa.select(oportunidade[:etapa])
 
-
         edt_contato_nome.gset oportunidade[:contato_nome]
         edt_contato_email.gset oportunidade[:contato_cargo]
         edt_contato_fone.gset oportunidade[:contato_email]
@@ -127,7 +126,7 @@ module Sections
         btn_salvar.gclick
 
         time = Time.new
-        file = File.open('reports/oportunidades/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".txt", 'w') do |fline|
+        file = File.open('reports/oportunidades/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".json", 'w') do |fline|
           fline.puts (oportunidade.to_json)
         end
 

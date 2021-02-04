@@ -20,40 +20,46 @@ module Sections
 
       def cadastro(cont)
         emailAPI = HTTParty.get('https://api-desafio.vercel.app/api/fixo/cliente')
-        email_fixo = emailAPI.parsed_response[cont]["email"]
+        @email_fixo = emailAPI.parsed_response[cont]["email"]
 
-        dados
-
-        nome.gset @nome
-        cpf.gset @cpf
-        nascimento.gset @nas
-        email.gset email_fixo
-        celular.gset @celular
-        cep.gset @cep
-        logradouro.gset @log
-        numero.gset @num
-        bairro.gset @bairro
-        cidade.gset @city
+        nome.gset dados[:nome]
+        cpf.gset dados[:cpf]
+        nascimento.gset dados[:nas]
+        email.gset @email_fixo
+        celular.gset dados[:celular]
+        cep.gset dados[:cep]
+        logradouro.gset dados[:log]
+        numero.gset dados[:num]
+        bairro.gset dados[:bairro]
+        cidade.gset dados[:city]
         uf.select "AM"
-        pais.gset @pais
+        pais.gset dados[:pais]
         btn_salvar.gclick
 
-        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {'email': email_fixo, 'cpf': @cpf, 'nome': @nome, 'nascimento': @nas, 'celular': @celular, 'cep': @cep, 'logradouro': @log, 'numero': @num, 'bairro': @bairro, 'cidade': @city, 'pais': @pais}.to_json)
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => dados.to_json)
+
+        time = Time.new
+        file = File.open('reports/clientes/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".json", 'w') do |fline|
+          fline.puts (dados.to_json)
+        end
       end
 
       def dados
         usuario = Factory.user
         endereco = Factory.address
-        @nome = usuario[:nome]
-        @cpf = usuario[:cpf]
-        @nas = usuario[:nascimento]
-        @celular = usuario[:celular]
-        @cep = endereco[:cep]
-        @log = endereco[:logradouro]
-        @num = endereco[:numero]
-        @bairro = endereco[:bairro]
-        @city = endereco[:cidade]
-        @pais = endereco[:pais]
+        {
+          nome: usuario[:nome],
+          cpf: usuario[:cpf],
+          nas: usuario[:nascimento],
+          email: @email_fixo,
+          celular: usuario[:celular],
+          cep: endereco[:cep],
+          log: endereco[:logradouro],
+          num: endereco[:numero],
+          bairro: endereco[:bairro],
+          city: endereco[:cidade],
+          pais: endereco[:pais]
+        }
       end
 
       def cadastro_erro(nomeSet, emailSet, cpfSet)

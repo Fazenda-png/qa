@@ -1,11 +1,8 @@
-
 Dado('que esteja credenciado')do
-  @home = $ec_pages.home
-  @login = $ec_pages.login
+  step 'que esteja na Home'
+  step 'acessar Login'
+  step 'realizar login com usuário válido'
   @cadastro = $ec_pages.cadastro
-  @home.load
-  @home.abrir_login
-  @login.logar
 end
 
 Dado('que esteja em clientes') do

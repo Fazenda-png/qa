@@ -1,6 +1,5 @@
 #language:pt
 
-
 Funcionalidade: Cadastrar Cliente
   Contexto: Página dos clientes
     Dado que esteja credenciado

@@ -16,7 +16,7 @@ module Pages
         3.times do
           btn_cadastrar.gclick
           cliente.cadastro(cont)
-          cont +=1
+          cont += 1
         end
       end
 
