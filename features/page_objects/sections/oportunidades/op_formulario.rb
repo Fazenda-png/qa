@@ -37,6 +37,13 @@ module Sections
       element :lista_contatos, '#lista_contatos_oportunidade'
       element :btn_salvar, '#btn_salvar_oportunidade'
 
+      element :error_name, "#razao_cliente-error"
+      element :error_email, "#email_cliente-error"
+      element :error_cpf, "#cpf-error"
+      element :error_cnpj, "#cnpj-error"
+      # element :error_name_con, ".toast-message"
+      element :error_email_con, "#email_contato-error"
+
       def geraOportunidade
         user = Factory.user
         endereco = Factory.address
@@ -114,12 +121,6 @@ module Sections
         rd_contato_principal[0].click
         btn_salvar.gclick
 
-        element :error_name, "#razao_cliente_error"
-        element :error_email, "#email_cliente_error"
-        element :error_cpf, "#cpf-error"
-        element :error_cnpj, "#cnpj-error"
-        element :error_name_con, ".toast-message"
-
         time = Time.new
         file = File.open('reports/oportunidades/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".txt", 'w') do |fline|
           fline.puts (oportunidade.to_json)
@@ -129,33 +130,37 @@ module Sections
       end
 
       def error_cad(local)
+        # binding.pry
         case local
-        when input_name_op
+        when 'input_name_op'
+          btn_salvar.gclick
           error_name.text
-        when input_email_op
+        when 'input_email_op'
           error_email.text
-        when input_email_con
-          error_email.text
-        when input_cpF
+        when 'input_email_con'
+          btn_novo_contato.gclick
+          error_email_con.text
+        when 'input_cpf'
           error_cpf.text
-        when input_cnpj
+        when 'input_cnpj'
           error_cnpj.text
-        when input_name_con
-          error_name_con.text
+        when 'input_name_con'
+          binding.pry
+          @home.message_op.text
         end
       end
 
       def cadastro_error(nome, tipo, cpf, cnpj, email, nome_cont, email_cont)
-        edt_nome.set nome
+        edt_nome.gset nome
         cbx_tp_pessoa.select(tipo)
-        if cbx_tp_pessoa == 'Pessoa Física'
-          edt_cpf.set cpf
-        else 
-          edt_cnpj.set cnpj
+        if tipo == 'Pessoa Física'
+          edt_cpf.gset cpf
+        else
+          edt_cnpj.gset cnpj
         end
-        edt_email.set email
-        edt_contato_nome.set nome_cont
-        edt_contato_email.set email_cont
+        edt_email.gset email
+        edt_contato_nome.gset nome_cont
+        edt_contato_email.gset email_cont
       end
     end
   end
