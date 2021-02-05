@@ -9,6 +9,9 @@ module Pages
       section :cliente, Sections::Cadastro::Cliente, '.add_novo'
 
       element :btn_cadastrar, '#cadastrar'
+      element :btn_confirma, '#btn_confirmar'
+      element :btn_del, '#deletar'
+      element :item, '.body_lista > .item_lista:last-child > .box_check'
       element :mensagem, '.nova_lista'
       element :mensagemErro, '.mdb-skin-custom'
 
@@ -26,6 +29,14 @@ module Pages
       def cadastrar_erro(nomeSet, emailSet, cpfSet)
         btn_cadastrar.gclick
         cliente.cadastro_erro(nomeSet, emailSet, cpfSet)
+      end
+
+      def exclui_cli
+        3.times do
+          item.gclick
+          btn_del.gclick
+          btn_confirma.gclick
+        end
       end
 
       def postCliente(clientes)

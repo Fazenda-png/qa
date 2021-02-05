@@ -22,6 +22,7 @@ module Sections
         emailAPI = HTTParty.get('https://api-desafio.vercel.app/api/fixo/cliente')
         @email_fixo = emailAPI.parsed_response[cont]["email"]
         cli = dados
+
         nome.gset cli[:nome]
         cpf.gset cli[:cpf]
         nascimento.gset cli[:nas]

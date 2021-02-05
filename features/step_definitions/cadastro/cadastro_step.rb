@@ -22,6 +22,7 @@ Então('deverá aparecer a mensagem') do
   mensagem = 'outro@mailsac.com'
   expect(@cadastro.mensagem).to have_content mensagem
   @cadastro.postCliente(@clientes)
+  @cadastro.exclui_cli
 end
 
 Então('deverá aparecer a {string}') do |mensagemErro|
