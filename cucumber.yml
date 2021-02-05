@@ -13,8 +13,8 @@ parallel: -p html_parallel -p json_parallel -p chrome -p ec -p prd -p parallel_r
 # Reports
 html_report: --format pretty --format html --out=reports/features_report_<%= RUN_TSTAMPs %>.html
 html_parallel: --format pretty --format html --out=reports/features_report_<%= ENV['TEST_ENV_NUMBER'] %>_<%= RUN_TSTAMPs %>.html
-json_report: --format pretty --format json --out=reports/features_report_<%= RUN_TSTAMPs %>.json
-json_parallel: --format pretty --format json --out=reports/features_report_<%= ENV['TEST_ENV_NUMBER'] %>_<%= RUN_TSTAMPs %>.json
+json_report: --format pretty --format message --out=reports/features_report_<%= RUN_TSTAMPs %>.json
+json_parallel: --format pretty --format message --out=reports/features_report_<%= ENV['TEST_ENV_NUMBER'] %>_<%= RUN_TSTAMPs %>.json
 
 # Browsers
 chrome: BROWSER=chrome
