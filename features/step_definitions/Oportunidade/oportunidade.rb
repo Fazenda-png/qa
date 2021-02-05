@@ -13,7 +13,7 @@ end
 
 Quando("preencher os campos") do
   @form = @oportunidade.formulario
-  @form.cadastraOportunidade
+  @oportunidade = @form.cadastraOportunidade
 end
 
 Quando('preencher os campos {string}, {string}, {string}, {string}, {string}, {string}, {string}') do |nome, tipo, cpf, cnpj, email, nome_cont, email_cont|
@@ -22,6 +22,7 @@ Quando('preencher os campos {string}, {string}, {string}, {string}, {string}, {s
 end
 
 Então("deverá aparecer {string}") do |mensagem|
+  @form.postOportunidade(@oportunidade)
   expect(@home.message_op.text).to eql mensagem
 end
 

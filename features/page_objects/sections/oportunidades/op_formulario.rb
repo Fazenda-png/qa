@@ -64,7 +64,8 @@ module Sections
         origem = opt_origem[rand(opt_origem.size-1)].text
         uf = opt_uf[rand(opt_uf.size-1)].text
         etapa = opt_etapa[rand(opt_etapa.size-1)].text
-        {
+
+        op = {
           nome: user[:nome],
           tipo_pessoa: tp_pessoa,
           cpf_cnpj: documento,
@@ -88,6 +89,9 @@ module Sections
           contato_telefone: user[:telefone],
           contato_celular: user[:celular]
         }
+
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/oportunidade',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => op.to_json)
+        op
       end
 
       def cadastraOportunidade
@@ -129,8 +133,7 @@ module Sections
         file = File.open('reports/oportunidades/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".json", 'w') do |fline|
           fline.puts (oportunidade.to_json)
         end
-
-        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/oportunidade',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => oportunidade.to_json)
+        oportunidade
       end
 
       def error_cad(local)
@@ -165,6 +168,10 @@ module Sections
         edt_email.gset email
         edt_contato_nome.gset nome_cont
         edt_contato_email.gset email_cont
+      end
+
+      def postOportunidade(oportunidade)
+        post = HTTParty.post('https://api-desafio.vercel.app/api/oportunidade',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => oportunidade.to_json)
       end
     end
   end
