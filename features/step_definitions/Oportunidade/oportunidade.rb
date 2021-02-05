@@ -22,8 +22,8 @@ Quando('preencher os campos {string}, {string}, {string}, {string}, {string}, {s
 end
 
 Então("deverá aparecer {string}") do |mensagem|
-  @form.postOportunidade(@oportunidade)
   expect(@home.message_op.text).to eql mensagem
+  @form.postOportunidade(@oportunidade)
 end
 
 Então('deverá aparecer {string} e {string}') do |mensagem, local|

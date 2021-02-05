@@ -21,33 +21,32 @@ module Sections
       def cadastro(cont)
         emailAPI = HTTParty.get('https://api-desafio.vercel.app/api/fixo/cliente')
         @email_fixo = emailAPI.parsed_response[cont]["email"]
-
-        nome.gset dados[:nome]
-        cpf.gset dados[:cpf]
-        nascimento.gset dados[:nas]
+        cli = dados
+        nome.gset cli[:nome]
+        cpf.gset cli[:cpf]
+        nascimento.gset cli[:nas]
         email.gset @email_fixo
-        celular.gset dados[:celular]
-        cep.gset dados[:cep]
-        logradouro.gset dados[:log]
-        numero.gset dados[:num]
-        bairro.gset dados[:bairro]
-        cidade.gset dados[:city]
+        celular.gset cli[:celular]
+        cep.gset cli[:cep]
+        logradouro.gset cli[:log]
+        numero.gset cli[:num]
+        bairro.gset cli[:bairro]
+        cidade.gset cli[:city]
         uf.select "AM"
-        pais.gset dados[:pais]
+        pais.gset cli[:pais]
         btn_salvar.gclick
-
-        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => dados.to_json)
 
         time = Time.new
         file = File.open('reports/clientes/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".json", 'w') do |fline|
-          fline.puts (dados.to_json)
+          fline.puts (cli.to_json)
         end
+        cli
       end
 
       def dados
         usuario = Factory.user
         endereco = Factory.address
-        {
+        clientes = {
           nome: usuario[:nome],
           cpf: usuario[:cpf],
           nas: usuario[:nascimento],
@@ -60,6 +59,9 @@ module Sections
           city: endereco[:cidade],
           pais: endereco[:pais]
         }
+
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => clientes.to_json)
+        clientes
       end
 
       def cadastro_erro(nomeSet, emailSet, cpfSet)

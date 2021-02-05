@@ -10,7 +10,8 @@ Dado('que esteja em clientes') do
 end
 
 Quando('preencher o formulário') do
-  @cadastro.cadastrar
+  @clientes = @cadastro.cadastrar
+  # binding.pry
 end
 
 Quando('preencher o formulário com {string}, {string}, {string}') do |nome, email, cpf|
@@ -20,6 +21,7 @@ end
 Então('deverá aparecer a mensagem') do
   mensagem = 'outro@mailsac.com'
   expect(@cadastro.mensagem).to have_content mensagem
+  @cadastro.postCliente(@clientes)
 end
 
 Então('deverá aparecer a {string}') do |mensagemErro|
