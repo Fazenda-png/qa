@@ -2,11 +2,11 @@ Dado("que esteja logado") do
   step 'que esteja na Home'
   step 'acessar Login'
   step 'realizar login com usuário válido'
-  @oportunidade = $ec_pages.oportunidades
 end
 
 Dado("esteja na pagina de oportunidades") do
   @home.abrir_oportunidades.click
+  @oportunidade = $ec_pages.oportunidades
   @btnOp = @oportunidade.listagem
   @btnOp.btn_cadastro.gclick
 end
