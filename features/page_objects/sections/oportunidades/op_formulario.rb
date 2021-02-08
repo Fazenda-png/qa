@@ -66,7 +66,7 @@ module Sections
         etapa = opt_etapa[rand(opt_etapa.size-1)].text
 
         op = {
-          nome: user[:nome],
+          nome: "Op"+user[:nome],
           tipo_pessoa: tp_pessoa,
           cpf_cnpj: documento,
           celular: user[:celular],
