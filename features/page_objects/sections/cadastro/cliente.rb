@@ -72,6 +72,20 @@ module Sections
         btn_salvar.gclick
       end
 
+      def uniaoCadastro1
+        nome.gset 'Zé Pinguço'
+        celular.gset '999999999'
+        btn_salvar.gclick
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {nome: "Zé Pinguço", cpf: "", nascimento: "", email: "", celular: "999999999", cep: "", logradouro: "", numero: "", bairro: "", cidade: "", pais: ""}.to_json)
+      end
+
+      def uniaoCadastro2
+        nome.gset 'Zé Pinguço'
+        email.gset 'teste@teste.com'
+        btn_salvar.gclick
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {nome: "Zé Pinguço", cpf: "", nascimento: "", email: "teste@teste.com", celular: "", cep: "", logradouro: "", numero: "", bairro: "", cidade: "", pais: ""}.to_json)
+      end
+
     end
   end
 end

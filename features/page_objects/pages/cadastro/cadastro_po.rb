@@ -31,8 +31,8 @@ module Pages
         cliente.cadastro_erro(nomeSet, emailSet, cpfSet)
       end
 
-      def exclui_cli
-        3.times do
+      def exclui_cli(x)
+        x.times do
           item.gclick
           btn_del.gclick
           btn_confirma.gclick
@@ -43,6 +43,13 @@ module Pages
         clientes.each { |cliente|
           post = HTTParty.post('https://api-desafio.vercel.app/api/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => cliente.to_json)
         }
+      end
+
+      def uniaoFinal
+        btn_cadastrar.gclick
+        cliente.uniaoCadastro1
+        btn_cadastrar.gclick
+        cliente.uniaoCadastro2
       end
 
     end

@@ -2,11 +2,11 @@ Dado('que esteja credenciado')do
   step 'que esteja na Home'
   step 'acessar Login'
   step 'realizar login com usuário válido'
-  @cadastro = $ec_pages.cadastro
 end
 
 Dado('que esteja em clientes') do
   @home.abrir_cliente
+  @cadastro = $ec_pages.cadastro
 end
 
 Quando('preencher o formulário') do
@@ -22,7 +22,7 @@ Então('deverá aparecer a mensagem') do
   mensagem = 'outro@mailsac.com'
   expect(@cadastro.mensagem).to have_content mensagem
   @cadastro.postCliente(@clientes)
-  @cadastro.exclui_cli
+  @cadastro.exclui_cli(3)
 end
 
 Então('deverá aparecer a {string}') do |mensagemErro|
