@@ -24,3 +24,9 @@ Funcionalidade: Cadastro de oportunidade
       | email_op     | Please enter a valid email address. | input_email_op  |
       | cnpj         | Informe um CNPJ válido.             | input_cnpj      |
       | email_con    | Please enter a valid email address. | input_email_con |
+
+    @deletar
+    Cenário: Deletar
+      Dado que possua Oportunidade cadastrada
+      Quando deletar Oportunidades
+      Então deverá aparecer a mensagem: "Removido com sucesso."
