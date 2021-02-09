@@ -21,45 +21,48 @@ module Sections
       def cadastro(cont)
         emailAPI = HTTParty.get('https://api-desafio.vercel.app/api/fixo/cliente')
         @email_fixo = emailAPI.parsed_response[cont]["email"]
+        cli = dados
 
-        nome.gset dados[:nome]
-        cpf.gset dados[:cpf]
-        nascimento.gset dados[:nas]
+        nome.gset cli[:nome]
+        cpf.gset cli[:cpf]
+        nascimento.gset cli[:nascimento]
         email.gset @email_fixo
-        celular.gset dados[:celular]
-        cep.gset dados[:cep]
-        logradouro.gset dados[:log]
-        numero.gset dados[:num]
-        bairro.gset dados[:bairro]
-        cidade.gset dados[:city]
+        celular.gset cli[:celular]
+        cep.gset cli[:cep]
+        logradouro.gset cli[:logradouro]
+        numero.gset cli[:numero]
+        bairro.gset cli[:bairro]
+        cidade.gset cli[:cidade]
         uf.select "AM"
-        pais.gset dados[:pais]
+        pais.gset cli[:pais]
         btn_salvar.gclick
-
-        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => dados.to_json)
 
         time = Time.new
         file = File.open('reports/clientes/'+ time.strftime("%m-%d-%Y.%H.%M.%S") + ".json", 'w') do |fline|
-          fline.puts (dados.to_json)
+          fline.puts (cli.to_json)
         end
+        cli
       end
 
       def dados
         usuario = Factory.user
         endereco = Factory.address
-        {
+        clientes = {
           nome: usuario[:nome],
           cpf: usuario[:cpf],
-          nas: usuario[:nascimento],
+          nascimento: usuario[:nascimento],
           email: @email_fixo,
           celular: usuario[:celular],
           cep: endereco[:cep],
-          log: endereco[:logradouro],
-          num: endereco[:numero],
+          logradouro: endereco[:logradouro],
+          numero: endereco[:numero],
           bairro: endereco[:bairro],
-          city: endereco[:cidade],
+          cidade: endereco[:cidade],
           pais: endereco[:pais]
         }
+
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => clientes.to_json)
+        clientes
       end
 
       def cadastro_erro(nomeSet, emailSet, cpfSet)
@@ -67,6 +70,20 @@ module Sections
         email.gset emailSet
         cpf.gset cpfSet
         btn_salvar.gclick
+      end
+
+      def uniaoCadastro1
+        nome.gset 'Zé Pinguço'
+        celular.gset '999999999'
+        btn_salvar.gclick
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {nome: "Zé Pinguço", cpf: "", nascimento: "", email: "", celular: "999999999", cep: "", logradouro: "", numero: "", bairro: "", cidade: "", pais: ""}.to_json)
+      end
+
+      def uniaoCadastro2
+        nome.gset 'Zé Pinguço'
+        email.gset 'teste@teste.com'
+        btn_salvar.gclick
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {nome: "Zé Pinguço", cpf: "", nascimento: "", email: "teste@teste.com", celular: "", cep: "", logradouro: "", numero: "", bairro: "", cidade: "", pais: ""}.to_json)
       end
 
     end
