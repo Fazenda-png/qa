@@ -25,14 +25,14 @@ module Sections
 
         nome.gset cli[:nome]
         cpf.gset cli[:cpf]
-        nascimento.gset cli[:nas]
+        nascimento.gset cli[:nascimento]
         email.gset @email_fixo
         celular.gset cli[:celular]
         cep.gset cli[:cep]
-        logradouro.gset cli[:log]
-        numero.gset cli[:num]
+        logradouro.gset cli[:logradouro]
+        numero.gset cli[:numero]
         bairro.gset cli[:bairro]
-        cidade.gset cli[:city]
+        cidade.gset cli[:cidade]
         uf.select "AM"
         pais.gset cli[:pais]
         btn_salvar.gclick
@@ -50,14 +50,14 @@ module Sections
         clientes = {
           nome: usuario[:nome],
           cpf: usuario[:cpf],
-          nas: usuario[:nascimento],
+          nascimento: usuario[:nascimento],
           email: @email_fixo,
           celular: usuario[:celular],
           cep: endereco[:cep],
-          log: endereco[:logradouro],
-          num: endereco[:numero],
+          logradouro: endereco[:logradouro],
+          numero: endereco[:numero],
           bairro: endereco[:bairro],
-          city: endereco[:cidade],
+          cidade: endereco[:cidade],
           pais: endereco[:pais]
         }
 
@@ -70,6 +70,20 @@ module Sections
         email.gset emailSet
         cpf.gset cpfSet
         btn_salvar.gclick
+      end
+
+      def uniaoCadastro1
+        nome.gset 'Zé Pinguço'
+        celular.gset '999999999'
+        btn_salvar.gclick
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {nome: "Zé Pinguço", cpf: "", nascimento: "", email: "", celular: "999999999", cep: "", logradouro: "", numero: "", bairro: "", cidade: "", pais: ""}.to_json)
+      end
+
+      def uniaoCadastro2
+        nome.gset 'Zé Pinguço'
+        email.gset 'teste@teste.com'
+        btn_salvar.gclick
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {nome: "Zé Pinguço", cpf: "", nascimento: "", email: "teste@teste.com", celular: "", cep: "", logradouro: "", numero: "", bairro: "", cidade: "", pais: ""}.to_json)
       end
 
     end

@@ -8,6 +8,8 @@ module Pages
 
       section :listagem, Sections::Oportunidades::ListagemOp, '.main-wrapper > .cont_geral'
       section :formulario, Sections::Oportunidades::Formulario, '#formulario_oportunidade'
+
+      element :btn_confirmar, '#btn_confirmar'
     end
   end
 end
