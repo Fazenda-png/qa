@@ -66,7 +66,7 @@ module Sections
         etapa = opt_etapa[rand(opt_etapa.size-1)].text
 
         op = {
-          nome: user[:nome],
+          nome: "Op"+user[:nome],
           tipo_pessoa: tp_pessoa,
           cpf_cnpj: documento,
           celular: user[:celular],
@@ -178,7 +178,7 @@ module Sections
         when 'cpf'
           edt_nome.gset nome_acc
           cbx_tp_pessoa.select("Pessoa Física")
-          edt_cpf.gset cpf_inv
+          edt_cpf.set cpf_inv
           edt_email.gset email_op_acc
           edt_contato_email.gset email_con_acc
         when 'email_op'

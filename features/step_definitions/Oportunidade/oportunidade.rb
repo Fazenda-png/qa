@@ -17,6 +17,7 @@ Quando("preencher os campos") do
 end
 
 Quando('preencher os campos {string}') do |erro|
+  @btnOp.btn_cadastro.gclick
   @form_erro = @oportunidade.formulario
   @form_erro.cadastro_error(erro)
 end

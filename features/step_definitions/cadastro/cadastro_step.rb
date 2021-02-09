@@ -11,6 +11,7 @@ end
 
 Quando('preencher o formulário') do
   @clientes = @cadastro.cadastrar
+ 
   # binding.pry
 end
 
