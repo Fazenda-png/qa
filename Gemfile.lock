@@ -10,7 +10,6 @@ PATH
       cucumber_statistics
       faker
       httparty
-      json
       nokogiri
       parallel_tests
       report_builder

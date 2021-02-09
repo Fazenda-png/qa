@@ -16,9 +16,9 @@ Quando("preencher os campos") do
   @oportunidade = @form.cadastraOportunidade
 end
 
-Quando('preencher os campos {string}, {string}, {string}, {string}, {string}, {string}, {string}') do |nome, tipo, cpf, cnpj, email, nome_cont, email_cont|
+Quando('preencher os campos {string}') do |erro|
   @form_erro = @oportunidade.formulario
-  @form_erro.cadastro_error(nome, tipo, cpf, cnpj, email, nome_cont, email_cont)
+  @form_erro.cadastro_error(erro)
 end
 
 Então("deverá aparecer {string}") do |mensagem|

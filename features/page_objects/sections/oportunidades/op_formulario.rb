@@ -157,17 +157,49 @@ module Sections
         end
       end
 
-      def cadastro_error(nome, tipo, cpf, cnpj, email, nome_cont, email_cont)
-        edt_nome.gset nome
-        cbx_tp_pessoa.select(tipo)
-        if tipo == 'Pessoa Física'
-          edt_cpf.gset cpf
-        else
-          edt_cnpj.gset cnpj
+      def cadastro_error(erro)
+        nome_acc = "Teste1"
+        nome_inv = ""
+        cpf_acc = "93722491061"
+        cpf_inv = "11111111111"
+        cnpj_inv = "11111111111111"
+        email_op_acc = "test@test.com"
+        email_con_acc = "test1@test.com"
+        email_op_inv = "test_"
+        email_con_inv = "test_"
+
+        case erro
+        when 'nome'
+          edt_nome.gset nome_inv
+          cbx_tp_pessoa.select("Pessoa Física")
+          edt_cpf.gset cpf_acc
+          edt_email.gset email_op_acc
+          edt_contato_email.gset email_con_acc
+        when 'cpf'
+          edt_nome.gset nome_acc
+          cbx_tp_pessoa.select("Pessoa Física")
+          edt_cpf.gset cpf_inv
+          edt_email.gset email_op_acc
+          edt_contato_email.gset email_con_acc
+        when 'email_op'
+          edt_nome.gset nome_acc
+          cbx_tp_pessoa.select("Pessoa Física")
+          edt_cpf.gset cpf_acc
+          edt_email.gset email_op_inv
+          edt_contato_email.gset email_con_acc
+        when 'cnpj'
+          edt_nome.gset nome_acc
+          cbx_tp_pessoa.select("Pessoa Jurídica")
+          edt_cnpj.gset cnpj_inv
+          edt_email.gset email_op_acc
+          edt_contato_email.gset email_con_acc
+        when 'email_con'
+          edt_nome.gset nome_acc
+          cbx_tp_pessoa.select("Pessoa Física")
+          edt_cpf.gset cpf_acc
+          edt_email.gset email_op_acc
+          edt_contato_email.gset email_con_inv
         end
-        edt_email.gset email
-        edt_contato_nome.gset nome_cont
-        edt_contato_email.gset email_cont
       end
 
       def postOportunidade(oportunidade)
