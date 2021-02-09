@@ -24,3 +24,9 @@ Funcionalidade: Cadastro de oportunidade
       | TESTE32 | Pessoa Física   | 042839560    |              | teste__             | TESTE33     | Pule1927@dayrep.com | Please enter a valid email address. | input_email_op  |
       | TESTE32 | Pessoa Jurídica |              | 111111111111 | Pule1927@rhyta.com  | TESTE33     | Pule1927@dayrep.com | Informe um CNPJ válido.             | input_cnpj      |
       | TESTE32 | Pessoa Jurídica |              | 972234900001 | Pule1927@rhyta.com  | TESTE33     | teste__             | Please enter a valid email address. | input_email_con |
+    @deletar
+    Cenário: Deletar
+      Dado que possua Oportunidade cadastrada
+      Quando deletar Oportunidades
+      Então deverá aparecer a mensagem: "Removido com sucesso."
+
