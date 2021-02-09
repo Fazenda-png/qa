@@ -41,4 +41,16 @@ class Factory
   def self.CNPJ
     ['51917449000150', '78547116000132', '15551257000109', '08658283000175', '98136007000130', '19483742000143', '36866460000144']
   end
+
+  def self.cadastro_error
+    {
+      nomeacc: "Teste1",
+      nomeinv: "",
+      cpfacc: "93722491061",
+      cpfinv: "11111111111",
+      cnpjinv: "11111111111111",
+      emailacc: "test@test.com",
+      emailinv: "test_",
+    }
+  end
 end
