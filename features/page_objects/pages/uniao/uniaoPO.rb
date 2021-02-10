@@ -12,12 +12,16 @@ module Pages
       elements :bolinha_check, '#lista_principal .form-check-label'
       element :btn_salvar, '#btn_salvar_unificar'
 
-      def unificar(nomeBusca)
+      def unificar
+        #uniaoAPI =  HTTParty.get('https://api-desafio.vercel.app/api/validacao/uniao')
+        #nomeAPI = uniaoAPI.parsed_response[1]["nome"]
+        nomeAPI = "Zé Pinguço"
+
         btn_unificar.gclick
         cbx_unificar.select "Razão/Nome"
-        busca.gset nomeBusca
+        busca.gset nomeAPI
         btn_pesquisar.gclick
-        
+
         btn_check.first.gclick
         btn_check.last.gclick
         btn_proxima.gclick

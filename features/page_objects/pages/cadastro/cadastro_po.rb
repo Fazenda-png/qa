@@ -45,7 +45,14 @@ module Pages
         }
       end
 
+      def postUniao
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {nome: "Zé Pinguço", cpf: "", nascimento: "", email: "", celular: "999999999", cep: "", logradouro: "", numero: "", bairro: "", cidade: "", pais: ""}.to_json)
+
+        post = HTTParty.post('https://api-desafio.vercel.app/api/validacao/cliente',:headers => {'cache-control': 'public, max-age=0, must-revalidate','content-type': 'application/json'}, :body => {nome: "Zé Pinguço", cpf: "", nascimento: "", email: "", celular: "999999999", cep: "", logradouro: "", numero: "", bairro: "", cidade: "", pais: ""}.to_json)
+      end
+
       def uniaoFinal
+        postUniao
         btn_cadastrar.gclick
         cliente.uniaoCadastro1
         btn_cadastrar.gclick

@@ -4,7 +4,7 @@ end
 
 Quando('unificar esses clientes') do
   @uniao = $ec_pages.uniao
-  @uniao.unificar('Zé Pinguço')
+  @uniao.unificar
 end
 
 Então('deverá aparecer a mensagem {string}') do |mensagem|
