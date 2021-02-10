@@ -170,15 +170,9 @@ module Sections
         when 'cpf'
           edt_nome.gset opError[:nomeacc]
           cbx_tp_pessoa.select("Pessoa Física")
-<<<<<<< HEAD
           edt_cpf.gset opError[:cpfinv]
           edt_email.gset opError[:emailacc]
           edt_contato_email.gset opError[:emailacc]
-=======
-          edt_cpf.set cpf_inv
-          edt_email.gset email_op_acc
-          edt_contato_email.gset email_con_acc
->>>>>>> 9a2ebab315be0064b06be61af07d988f3d398d2e
         when 'email_op'
           edt_nome.gset opError[:nomeacc]
           cbx_tp_pessoa.select("Pessoa Física")
