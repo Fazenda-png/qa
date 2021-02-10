@@ -11,7 +11,6 @@ end
 
 Quando('cadastrar o cliente') do
   @clientes = @cadastro.cadastrar
-
   # binding.pry
 end
 

@@ -41,6 +41,9 @@ Quando('deletar Oportunidades') do
   @listagem.checkall.gclick
   @listagem.btn_deletar.gclick
   @oportunidade.btn_confirmar.gclick
+  @home.abrir_cliente
+  @cadastro = $ec_pages.cadastro
+  @cadastro.exclui_cli(1)
 end
 
 Então('deverá aparecer a mensagem: {string}') do |mensagem|
