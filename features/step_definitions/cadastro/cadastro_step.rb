@@ -9,13 +9,13 @@ Dado('que esteja em clientes') do
   @cadastro = $ec_pages.cadastro
 end
 
-Quando('preencher o formulário') do
+Quando('cadastrar o cliente') do
   @clientes = @cadastro.cadastrar
- 
+
   # binding.pry
 end
 
-Quando('preencher o formulário com {string}, {string}, {string}') do |nome, email, cpf|
+Quando('cadastrar o cliente com {string}, {string}, {string}') do |nome, email, cpf|
   @cadastro.cadastrar_erro(nome,email,cpf)
 end
 

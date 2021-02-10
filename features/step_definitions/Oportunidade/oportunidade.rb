@@ -10,13 +10,13 @@ Dado("esteja na pagina de oportunidades") do
   @btnOp = @oportunidade.listagem
 end
 
-Quando("preencher os campos") do
+Quando("cadastrar oportunidade") do
   @btnOp.btn_cadastro.gclick
   @form = @oportunidade.formulario
   @oportunidade = @form.cadastraOportunidade
 end
 
-Quando('preencher os campos {string}') do |erro|
+Quando('tentar cadastrar oportunidade {string}') do |erro|
   @btnOp.btn_cadastro.gclick
   @form_erro = @oportunidade.formulario
   @form_erro.cadastro_error(erro)

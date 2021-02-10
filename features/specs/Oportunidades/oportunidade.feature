@@ -8,12 +8,12 @@ Funcionalidade: Cadastro de oportunidade
 
     @oportunidade
     Cenário: Cadastro
-      Quando preencher os campos
+      Quando cadastrar oportunidade
       Então deverá aparecer "Registro cadastrado com sucesso."
 
     @oportunidadeErro
     Esquema do Cenário: Cadastro erro
-      Quando preencher os campos "<erro>"
+      Quando tentar cadastrar oportunidade "<erro>"
       Então deverá aparecer "<mensagem>" e "<local>"
 
       Exemplos:
