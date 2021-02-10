@@ -22,6 +22,13 @@ def timestamp
   "#{date}_#{time}"
 end
 
+if File.directory?('reports/') == false
+  Dir.mkdir('reports/')
+  Dir.mkdir('reports/screenshots/')
+  Dir.mkdir('reports/clientes/')
+  Dir.mkdir('reports/oportunidades/')
+end
+
 RUN_TSTAMP = timestamp.freeze
 RUN_DIR = "reports/screenshots/#{RUN_TSTAMP}/".freeze
 $screenshot_counter = 1
