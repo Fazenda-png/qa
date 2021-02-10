@@ -158,47 +158,45 @@ module Sections
       end
 
       def cadastro_error(erro)
-        nome_acc = "Teste1"
-        nome_inv = ""
-        cpf_acc = "93722491061"
-        cpf_inv = "11111111111"
-        cnpj_inv = "11111111111111"
-        email_op_acc = "test@test.com"
-        email_con_acc = "test1@test.com"
-        email_op_inv = "test_"
-        email_con_inv = "test_"
+        opError = Factory.cadastro_error
 
         case erro
         when 'nome'
-          edt_nome.gset nome_inv
+          edt_nome.gset opError[:nomeinv]
           cbx_tp_pessoa.select("Pessoa Física")
-          edt_cpf.gset cpf_acc
-          edt_email.gset email_op_acc
-          edt_contato_email.gset email_con_acc
+          edt_cpf.gset opError[:cpfacc]
+          edt_email.gset opError[:emailacc]
+          edt_contato_email.gset opError[:emailacc]
         when 'cpf'
-          edt_nome.gset nome_acc
+          edt_nome.gset opError[:nomeacc]
           cbx_tp_pessoa.select("Pessoa Física")
+<<<<<<< HEAD
+          edt_cpf.gset opError[:cpfinv]
+          edt_email.gset opError[:emailacc]
+          edt_contato_email.gset opError[:emailacc]
+=======
           edt_cpf.set cpf_inv
           edt_email.gset email_op_acc
           edt_contato_email.gset email_con_acc
+>>>>>>> 9a2ebab315be0064b06be61af07d988f3d398d2e
         when 'email_op'
-          edt_nome.gset nome_acc
+          edt_nome.gset opError[:nomeacc]
           cbx_tp_pessoa.select("Pessoa Física")
-          edt_cpf.gset cpf_acc
-          edt_email.gset email_op_inv
-          edt_contato_email.gset email_con_acc
+          edt_cpf.gset opError[:cpfacc]
+          edt_email.gset opError[:emailinv]
+          edt_contato_email.gset opError[:emailacc]
         when 'cnpj'
-          edt_nome.gset nome_acc
+          edt_nome.gset opError[:nomeacc]
           cbx_tp_pessoa.select("Pessoa Jurídica")
-          edt_cnpj.gset cnpj_inv
-          edt_email.gset email_op_acc
-          edt_contato_email.gset email_con_acc
+          edt_cnpj.gset opError[:cnpjinv]
+          edt_email.gset opError[:emailacc]
+          edt_contato_email.gset opError[:emailacc]
         when 'email_con'
-          edt_nome.gset nome_acc
+          edt_nome.gset opError[:nomeacc]
           cbx_tp_pessoa.select("Pessoa Física")
-          edt_cpf.gset cpf_acc
-          edt_email.gset email_op_acc
-          edt_contato_email.gset email_con_inv
+          edt_cpf.gset opError[:cpfacc]
+          edt_email.gset opError[:emailacc]
+          edt_contato_email.gset opError[:emailinv]
         end
       end
 
