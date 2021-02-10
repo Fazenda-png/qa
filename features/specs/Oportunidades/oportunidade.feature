@@ -29,4 +29,4 @@ Funcionalidade: Cadastro de oportunidade
     Cenário: Deletar
       Dado que possua Oportunidade cadastrada
       Quando deletar Oportunidades
-      Então deverá aparecer a mensagem: "Removido com sucesso."
+      Então deverá aparecer a mensagem: "Itens excluídos com sucesso."
