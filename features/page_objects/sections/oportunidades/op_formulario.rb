@@ -101,7 +101,7 @@ module Sections
         cbx_tp_pessoa.select(oportunidade[:tipo_pessoa])
 
         if oportunidade[:tipo_pessoa] == 'Pessoa Física'
-          edt_cpf.gset oportunidade[:cpf_cnpj]
+          edt_cpf.set oportunidade[:cpf_cnpj]
         else
           edt_cnpj.gset oportunidade[:cpf_cnpj]
         end
@@ -164,19 +164,19 @@ module Sections
         when 'nome'
           edt_nome.gset opError[:nomeinv]
           cbx_tp_pessoa.select("Pessoa Física")
-          edt_cpf.gset opError[:cpfacc]
+          edt_cpf.set opError[:cpfacc]
           edt_email.gset opError[:emailacc]
           edt_contato_email.gset opError[:emailacc]
         when 'cpf'
           edt_nome.gset opError[:nomeacc]
           cbx_tp_pessoa.select("Pessoa Física")
-          edt_cpf.gset opError[:cpfinv]
+          edt_cpf.set opError[:cpfinv]
           edt_email.gset opError[:emailacc]
           edt_contato_email.gset opError[:emailacc]
         when 'email_op'
           edt_nome.gset opError[:nomeacc]
           cbx_tp_pessoa.select("Pessoa Física")
-          edt_cpf.gset opError[:cpfacc]
+          edt_cpf.set opError[:cpfacc]
           edt_email.gset opError[:emailinv]
           edt_contato_email.gset opError[:emailacc]
         when 'cnpj'

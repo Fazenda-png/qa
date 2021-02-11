@@ -72,6 +72,13 @@ module Sections
         btn_salvar.gclick
       end
 
+      def cpf_erro
+        nome.gset "Exception"
+        email.gset "a"
+        cpf.gset  "867.778.800-03"
+        btn_salvar.gclick
+      end
+
       def uniaoCadastro1
         nome.gset 'Zé Pinguço'
         celular.gset '999999999'

@@ -10,6 +10,8 @@ Dado('que esteja em clientes') do
 end
 
 Quando('cadastrar o cliente') do
+  @cadastro.exclui_cli
+  @cadastro.cadastro_exception
   @clientes = @cadastro.cadastrar
   # binding.pry
 end
@@ -22,7 +24,7 @@ Então('deverá aparecer a mensagem') do
   mensagem = 'outro@mailsac.com'
   expect(@cadastro.mensagem).to have_content mensagem
   @cadastro.postCliente(@clientes)
-  @cadastro.exclui_cli(3)
+
 end
 
 Então('deverá aparecer a {string}') do |mensagemErro|

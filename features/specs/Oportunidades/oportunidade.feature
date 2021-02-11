@@ -1,17 +1,18 @@
 #language:pt
 
+@cadastros @limpar
 Funcionalidade: Cadastro de oportunidade
 
   Contexto: Logado
     Dado que esteja logado
     E esteja na pagina de oportunidades
 
-    @oportunidade
+
     Cenário: Cadastro
       Quando cadastrar oportunidade
       Então deverá aparecer "Registro cadastrado com sucesso."
 
-    @oportunidadeErro
+
     Esquema do Cenário: Cadastro erro
       Quando tentar cadastrar oportunidade "<erro>"
       Então deverá aparecer "<mensagem>" e "<local>"
@@ -25,7 +26,7 @@ Funcionalidade: Cadastro de oportunidade
       | cnpj         | Informe um CNPJ válido.             | input_cnpj      |
       | email_con    | Please enter a valid email address. | input_email_con |
 
-    @deletar
+
     Cenário: Deletar
       Dado que possua Oportunidade cadastrada
       Quando deletar Oportunidades

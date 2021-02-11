@@ -1,12 +1,13 @@
 #language:pt
 
+@uniao
 Funcionalidade: União
 
   Contexto: Logado
     Dado que esteja logado
     E que esteja em clientes
 
-    @uniao
+
     Cenário: União Clientes
       Dado que tenha clientes com o mesmo nome
       Quando unificar esses clientes

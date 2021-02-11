@@ -1,6 +1,5 @@
 #language:pt
 
-@login
 Funcionalidade: Login
   Contexto: Home
     Dado que esteja na Home
