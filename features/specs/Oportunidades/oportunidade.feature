@@ -7,11 +7,9 @@ Funcionalidade: Cadastro de oportunidade
     Dado que esteja logado
     E esteja na pagina de oportunidades
 
-
     Cenário: Cadastro
       Quando cadastrar oportunidade
       Então deverá aparecer "Registro cadastrado com sucesso."
-
 
     Esquema do Cenário: Cadastro erro
       Quando tentar cadastrar oportunidade "<erro>"
@@ -25,7 +23,6 @@ Funcionalidade: Cadastro de oportunidade
       | email_op     | Please enter a valid email address. | input_email_op  |
       | cnpj         | Informe um CNPJ válido.             | input_cnpj      |
       | email_con    | Please enter a valid email address. | input_email_con |
-
 
     Cenário: Deletar
       Dado que possua Oportunidade cadastrada

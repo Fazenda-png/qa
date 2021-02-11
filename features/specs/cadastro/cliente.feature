@@ -1,16 +1,15 @@
 #language:pt
 
-@cadastro
+@cadastros
 Funcionalidade: Cadastrar Cliente
+
   Contexto: Página dos clientes
     Dado que esteja credenciado
     E que esteja em clientes
 
-
     Cenário: Cadastro Cliente
       Quando cadastrar o cliente
       Então deverá aparecer a mensagem
-
 
     Esquema do Cenário: Cadastro Cliente Excption
       Quando cadastrar o cliente com "<nome>", "<email>", "<cpf>"
