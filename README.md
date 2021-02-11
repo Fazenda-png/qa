@@ -43,6 +43,10 @@ cucumber -t @login
 ```sh
 cucumber -t @cadastro
 ```
+- Cadastro de oportunidades
+```sh
+cucumber -t @oportunidade
+```
 
 ### Dependências do template
 - `cucumber`
