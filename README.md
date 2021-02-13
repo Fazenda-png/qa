@@ -39,13 +39,9 @@ bundle install
 ```sh
 cucumber -t @login
 ```
-- Cadastro de cliente
+- Cadastros Cliente e Oportunidade
 ```sh
-cucumber -t @cadastro
-```
-- Cadastro de oportunidades
-```sh
-cucumber -t @oportunidade
+cucumber -t @cadastros
 ```
 
 ### Dependências do template
