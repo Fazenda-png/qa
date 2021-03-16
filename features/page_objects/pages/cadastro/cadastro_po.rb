@@ -40,11 +40,9 @@ module Pages
 
       def exclui_cli
         #binding.pry
-        if has_verifica_cli?
-          check_all.gclick
-          btn_del.gclick
-          btn_confirma.gclick
-        end
+        check_all.gclick
+        btn_del.gclick
+        btn_confirma.gclick
       end
 
       def postCliente(clientes)

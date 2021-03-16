@@ -8,12 +8,12 @@ Funcionalidade: Cadastro de oportunidade
     E esteja na pagina de oportunidades
 
 
-    Cenário: Cadastro
+    Cenário: Cadastro Oportunidade
       Quando cadastrar oportunidade
       Então deverá aparecer "Registro cadastrado com sucesso."
 
 
-    Esquema do Cenário: Cadastro erro
+    Esquema do Cenário: Cadastro Oportunidade erro
       Quando tentar cadastrar oportunidade "<erro>"
       Então deverá aparecer "<mensagem>" e "<local>"
 
@@ -30,4 +30,4 @@ Funcionalidade: Cadastro de oportunidade
     Cenário: Deletar
       Dado que possua Oportunidade cadastrada
       Quando deletar Oportunidades
-      Então deverá aparecer a mensagem: "Itens excluídos com sucesso."
+      Então deverá aparecer a mensagem: "Removido com sucesso."

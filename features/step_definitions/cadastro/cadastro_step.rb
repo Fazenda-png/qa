@@ -13,7 +13,6 @@ Quando('cadastrar o cliente') do
   @cadastro.exclui_cli
   @cadastro.cadastro_exception
   @clientes = @cadastro.cadastrar
-  # binding.pry
 end
 
 Quando('cadastrar o cliente com {string}, {string}, {string}') do |nome, email, cpf|

@@ -12,11 +12,10 @@ module Pages
 
       def logar
         aut = Factory.user
-
         input_email.gset aut[:aut_email]
         input_senha.gset aut[:aut_senha]
 
-        (0..2).each do
+        (0..2).each do 
           if has_btn_entrar?
             btn_entrar.gclick
           end
